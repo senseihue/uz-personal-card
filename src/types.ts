@@ -1,0 +1,98 @@
+
+export enum DRIVING_LICENSE_CATEGORIES {
+    A = "A",
+    B = "B",
+    C = "C",
+    D = "D",
+    E = "E",
+    F = "F",
+    G = "G",
+}
+
+export enum Size {
+    SMALL = 'small',
+    MEDIUM = 'medium',
+    LARGE = 'large',
+}
+
+export enum Types {
+    ID_CARD = 'id_card',
+    DRIVING_LICENSE = 'driving_license',
+    AUTOTRANSPORT_CARD = 'autotransport_card',
+    INTERNATIONAL_PASSPORT = 'international_passport',
+}
+
+
+export interface CitizenDocument {
+    document: string;
+    type: string;
+    datebegin: string;
+    dateend?: string;
+    status: number;
+}
+
+export interface BASE_PERSONAL_INFO {
+    name: string,
+    surname: string,
+    patronymic: string,
+    photo: string,
+    gender: "F" | "M",
+    passport_number: string,
+    pin: string,
+    date_of_birth: string,
+    place_of_birth: string,
+    country_of_birth: string,
+    date_of_issue: string,
+    date_of_expiry: string,
+}
+
+
+export interface ID_CARD_PERSONAL_INFO extends BASE_PERSONAL_INFO {
+    place_of_issue: string,
+    citizenship: string,
+    nationality: string,
+    photo: string
+}
+
+
+export interface DRIVING_LICENSE_CATEGORY {
+    category: DRIVING_LICENSE_CATEGORIES,
+    expiration_date: string,
+    issue_date: string,
+}
+
+export interface DRIVING_LICENSE_PERSONAL_INFO extends BASE_PERSONAL_INFO {
+    license_number: string,
+    expiration_date: string,
+    issue_date: string,
+    categories: DRIVING_LICENSE_CATEGORY[],
+}
+
+export interface INTERNATIONAL_PASSPORT_PERSONAL_INFO extends BASE_PERSONAL_INFO {
+    issuePlace: string;
+    issueDate: string;
+    endDate: string;
+    photo: string;
+    pins: number[];
+    citizenDocuments: CitizenDocument[];
+    docs: string[];
+}
+
+export interface AUTOTRANSPORT_CARD_PERSONAL_INFO extends BASE_PERSONAL_INFO {
+}
+
+
+export type PersonalInfoMap = {
+    [Types.ID_CARD]: ID_CARD_PERSONAL_INFO
+    [Types.DRIVING_LICENSE]: DRIVING_LICENSE_PERSONAL_INFO
+    [Types.AUTOTRANSPORT_CARD]: AUTOTRANSPORT_CARD_PERSONAL_INFO
+    [Types.INTERNATIONAL_PASSPORT]: INTERNATIONAL_PASSPORT_PERSONAL_INFO
+}
+
+export type Options<T extends Types = Types> = {
+    element_id: string
+    size: Size
+    type: T
+    personal_info: PersonalInfoMap[T]
+}
+

@@ -2,77 +2,130 @@ import { css, unsafeCSS, type CSSResultGroup } from 'lit';
 import bg from '../assets/driving-license.svg'
 export class DrivingLicenseStyle {
   static styles: CSSResultGroup = css`
-    :host {
-      display: block;
-      font-family: Arial, sans-serif;
-    }
+           .card {
+           width: 450px;
+           height: 281px;
+           position: relative;
+       }
 
-    .card {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 16px;
-       width: 450px;
-      height: 281px;
-      position: relative;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+       .photo {
+           width: 107px;
+           height: 136px;
+           top: 73px;
+           left: 13px;
+           border-radius: 6px;
+           position: absolute;
+           z-index: 0;
+       }
 
-    .card.small {
-      font-size: 12px;
-    }
+       .card-frontside {
+           background-image: url('${unsafeCSS(bg)}');
+           background-size: cover;
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           backface-visibility: hidden;
+           -webkit-backface-visibility: hidden;
+       }
 
-    .card.medium {
-      font-size: 14px;
-    }
 
-    .card.large {
-      font-size: 16px;
-    }
+       .value {
+           margin: 0px;
+           font-weight: 600;
+           line-height: 1.4;
+           font-family: "Golos Text", "Trebuchet MS", "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+           letter-spacing: -0.01em;
+           font-size: 12px;
+           color: rgb(11, 11, 12);
+       }
 
-    .card-frontside {
-            background-image: url('${unsafeCSS(bg)}');
-      background-size: cover;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-    }
 
-    .header {
-      font-weight: bold;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 8px;
-    }
+       .info-row {
+           position: absolute;
+       }
 
-    .info-row {
-    }
+       .user-name {
 
-    .label {
-      font-weight: bold;
-      color: #666;
-    }
+           top: 73px;
+           left: 150px;
+       }
 
-    .value {
-      color: #333;
-    }
 
-    .categories {
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid #eee;
-    }
+       .user-surname {
+           top: 88px;
+           left: 150px;
+       }
 
-    .category-item {
-      display: inline-block;
-      margin: 4px 8px 4px 0;
-      padding: 4px 8px;
-      background: #f0f0f0;
-      border-radius: 4px;
-    }
+       .user-patronymic {
+           top: 104px;
+           left: 150px;
+       }
+
+       .passport-number {
+           top: 181px;
+           left: 150px;
+       }
+
+       .user-birth-info,
+       .date-of-issue {
+           display: flex;
+           align-items: center;
+           gap: 10px;
+           max-width: 250px;
+           flex-wrap: nowrap;
+           overflow: hidden;
+       }
+
+       .user-birth-info .value {
+           max-width: 150px;
+           overflow: hidden;
+           white-space: nowrap;
+       }
+
+       .user-birth-info {
+           top: 120px;
+           left: 150px;
+
+       }
+
+       .date-of-issue {
+           top: 135px;
+           left: 150px;
+       }
+
+       .date-of-expiry {
+           top: 135px;
+           left: 264px;
+       }
+
+       .place-of-issue {
+           top: 150px;
+           left: 150px;
+       }
+
+       .user-pin {
+           top: 165px;
+           left: 150px;
+       }
+
+       .user-birth-place {
+           top: 197px;
+           left: 150px;
+           font-size: 12px;
+           max-width: 250px;
+           line-height: 1;
+       }
+
+
+       .categories {
+           position: absolute;
+           bottom: 24px;
+           left: 150px;
+           font-size: 12px;
+           max-width: 250px;
+       }
   `;
 }
 

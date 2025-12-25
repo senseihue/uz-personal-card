@@ -3,11 +3,6 @@ import idcard from '../assets/id-card.svg'
 import idcardback from '../assets/idcardback.svg'
 export class IdCardStyle {
   static styles: CSSResultGroup = css`
-    :host {
-      display: block;
-      font-family: Arial, sans-serif;
-    }
-
     .card {
       width: 450px;
       height: 281px;
@@ -70,16 +65,12 @@ export class IdCardStyle {
       position: absolute;
     }
 
-    .label {
+    .value {
       margin: 0px;
       font-weight: 600;
       line-height: 1.4;
       letter-spacing: -0.01em;
       color: rgb(11, 11, 12);
-    }
-
-    .value {
-      color: #333;
     }
 
     .photo {

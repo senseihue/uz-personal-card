@@ -51,7 +51,39 @@ export interface ID_CARD_PERSONAL_INFO extends BASE_PERSONAL_INFO {
     place_of_issue: string,
     citizenship: string,
     nationality: string,
-    photo: string
+    photo: string,
+}
+
+export interface MILITRY_ID_CARD_INFO extends BASE_PERSONAL_INFO {
+    place_of_issue: string,
+    nationality: string,
+    photo: string,
+    /**
+    * 0 — Reserved
+    * 1 — Active service
+    */
+    status: 0 | 1 // 0 reserved,
+    id_number: string,
+    militry_series: string,
+    personal_number: string,
+    main_civilian_specialty: string,
+    martial_status: string,
+    /**  
+    * (Attitude towards military service)
+    */
+    atms: string
+    militry_rank: string,
+    hhom: string,
+    
+    /**  
+    * Name Department of Defense Affairs
+    */
+    dda: string,
+    registred_date: string,
+    /**  
+    * Head of the Department of Defense Affairs
+    */
+    head_of_dda: string
 }
 
 
@@ -69,13 +101,10 @@ export interface DRIVING_LICENSE_PERSONAL_INFO extends BASE_PERSONAL_INFO {
 }
 
 export interface INTERNATIONAL_PASSPORT_PERSONAL_INFO extends BASE_PERSONAL_INFO {
-    issuePlace: string;
-    issueDate: string;
-    endDate: string;
-    photo: string;
-    pins: number[];
-    citizenDocuments: CitizenDocument[];
-    docs: string[];
+    place_of_issue: string,
+    citizenship: string,
+    nationality: string,
+    photo: string
 }
 
 export interface AUTOTRANSPORT_CARD_PERSONAL_INFO extends BASE_PERSONAL_INFO {

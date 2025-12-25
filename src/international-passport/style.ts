@@ -2,89 +2,122 @@ import { css, type CSSResultGroup } from 'lit';
 
 export class InternationalPassportStyle {
   static styles: CSSResultGroup = css`
-    :host {
-      display: block;
-      font-family: Arial, sans-serif;
-    }
+    .internatioanl-passport {
+    width: 450px;
+    height: 281px;
+    transform-style: preserve-3d;
+    transition: transform .8s ease;
+    position: relative;
+    cursor: pointer;
+}
 
-    .card {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      padding: 16px;
-      background: url('../assets/internation-passport.svg') center/cover no-repeat;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
+.internatioanl-passport.flipped {
+    transform: rotateY(180deg);
+}
 
-    .card.small {
-      max-width: 300px;
-      font-size: 12px;
-    }
 
-    .card.medium {
-      max-width: 400px;
-      font-size: 14px;
-    }
+.internatioanl-passport-frontside {
+    background-image: url('./src/assets/internation-passport.svg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
 
-    .card.large {
-      max-width: 500px;
-      font-size: 16px;
-    }
+.info-row {
+    position: absolute;
+}
 
-    .header {
-      font-weight: bold;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 8px;
-    }
+.value {
+    margin: 0px;
+    font-weight: 600;
+    line-height: 1.4;
+    font-family: "Golos Text", "Trebuchet MS", "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    letter-spacing: -0.01em;
+    font-size: 12px;
+    color: rgb(11, 11, 12);
+}
 
-    .info-row {
-      margin: 8px 0;
-      display: flex;
-      justify-content: space-between;
-    }
+.photo {
+    width: 118px;
+    height: 152px;
+    top: 65px;
+    left: 12px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 0;
+}
 
-    .label {
-      font-weight: bold;
-      color: #666;
-    }
+.user-name {
+    top: 62px;
+    left: 140px;
+}
 
-    .value {
-      color: #333;
-    }
+.user-surname {
+    top: 82px;
+    left: 140px;
+}
 
-    .photo {
-      width: 100px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 4px;
-      margin: 12px 0;
-    }
+.user-patronymic {
+    top: 102px;
+    left: 140px;
+}
 
-    .section {
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid #eee;
-    }
+.date-of-birth {
+    top: 142px;
+    left: 140px;
+}
 
-    .document-item {
-      margin: 8px 0;
-      padding: 8px;
-      background: #f9f9f9;
-      border-radius: 4px;
-    }
+.place-of-birth {
+    top: 162px;
+    left: 140px;
+}
 
-    .pins-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
+.date-of-issue {
+    top: 192px;
+    left: 140px;
+}
 
-    .pin-item {
-      padding: 4px 8px;
-      background: #e0e0e0;
-      border-radius: 4px;
-    }
+.date-of-expiry {
+    top: 212px;
+    left: 140px;
+}
+
+.passport-number {
+    top: 34px;
+    right: 75px;
+}
+
+.user-citizenship {
+    top: 122px;
+    left: 140px;
+}
+
+
+.place-of-birth {
+    top: 162px;
+    left: 200px;
+}
+
+.place-of-issue {
+    top: 192px;
+    left: 275px;
+}
+
+
+.user-gender {
+    top: 162px;
+    left: 140px;
+}
+.user-p {
+    bottom: 20px;
+    left: 25px;
+
+}
   `;
 }
 

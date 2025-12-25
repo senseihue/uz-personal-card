@@ -50,13 +50,14 @@ export class DrivingLicenseCard extends BaseComponent {
         <span class="value">${personalInfo.date_of_birth}</span>
       </div>
 
-
-
       <div class="info-row date-of-issue">
         <span class="value">${personalInfo.date_of_issue}</span>
-        <span class="value">${personalInfo.date_of_expiry}</span>
+        
 
       </div>
+      <div class="info-row date-of-expiry">
+          <span class="value">${personalInfo.date_of_expiry}</span>
+        </div>
       <div class="info-row place-of-issue">
         <span class="value">${personalInfo.place_of_birth}</span>
       </div>
@@ -66,15 +67,12 @@ export class DrivingLicenseCard extends BaseComponent {
       <div class="info-row passport-number">
         <span class="value">${personalInfo.passport_number}</span>
       </div>
-      <div class="info-row  user-birth-place">
+      <div class="info-row user-birth-place">
         <span class="value">${personalInfo.place_of_birth}</span>
       </div>
       ${personalInfo.categories && personalInfo.categories.length > 0 ? html`
         <div class="categories">
-          <div class="label">Categories:</div>
-          ${personalInfo.categories.map(cat => html`
-            <span class="category-item">${cat.category}</span>
-          `)}
+          <span class="value">${personalInfo.categories.map(cat => cat.category).join(', ')}</span>
         </div>
       ` : ''}
     </div>

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "<projectFolder>/src/index.d.ts",
+  "bundledPackages": [],
+  "compiler": {
+  },
+  "apiReport": {
+    "enabled": true
+  },
+  "docModel": {
+    "enabled": true,
+    "projectFolderUrl": "https://github.com/senseihue/uz-personal-card"
+  },
+  "dtsRollup": {
+    "enabled": true
+  },
+  "messages": {
+    "compilerMessageReporting": {
+    },
+    "extractorMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    },
+    
+    "tsdocMessageReporting": {
+      "default": {
+        "logLevel": "warning"
+      }
+    }
+  }
+}

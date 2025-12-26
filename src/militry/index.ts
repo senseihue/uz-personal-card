@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BaseComponent } from '../core/index.ts';
-import { MILITRY_ID_CARD_INFO, Size } from '../types.ts';
+import { MILITRY_ID_CARD_INFO, Size } from '../index';
 import { MilitryIdCardStyle } from './style.ts';
 
 /**
@@ -20,20 +20,20 @@ export class MilitryIdCard extends BaseComponent {
   size: Size = Size.MEDIUM;
 
   @property({ type: Boolean })
-  private flipped = !false;
+  private flipped = false;
 
   override render() {
     if (!this.personalInfo) {
-      return html`<div class="card">No data available</div>`;
+      return html`<div class="militry-id-card">No data available</div>`;
     }
 
     const { personalInfo } = this;
     const sizeClass = this.size.toLowerCase();
 
     return html`
-      <div class="card ${sizeClass} ${this.flipped ? 'flipped' : ''}" @click=${this._onClick}>
+      <div class="militry-id-card ${sizeClass} ${this.flipped ? 'flipped' : ''}" @click=${this._onClick}>
         
-      <div class="card-frontside">
+      <div class="militry-id-card-frontside">
           ${personalInfo.photo ? html`
           <img src="${personalInfo.photo}" alt="Photo" class="photo" />
           ` : ''}
@@ -71,7 +71,7 @@ export class MilitryIdCard extends BaseComponent {
         </div>
 
       </div>
-      <div class="card-backside">
+      <div class="militry-id-card-backside">
         <div class="info-row user-personal-number">
           <span class="value">${personalInfo.personal_number}</span>
         </div>

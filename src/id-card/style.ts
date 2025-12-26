@@ -3,7 +3,7 @@ import idcard from '../assets/id-card.svg'
 import idcardback from '../assets/idcardback.svg'
 export class IdCardStyle {
   static styles: CSSResultGroup = css`
-    .card {
+    .id-card {
       width: 450px;
       height: 281px;
       transform-style: preserve-3d;
@@ -12,12 +12,12 @@ export class IdCardStyle {
       cursor: pointer;
     }
 
-    .card.flipped {
+    .id-card.flipped {
       transform: rotateY(180deg);
     }
 
     
-    .card-frontside {
+    .id-card-frontside {
       background-image: url('${unsafeCSS(idcard)}');
       background-size: cover;
       position: absolute;
@@ -29,7 +29,7 @@ export class IdCardStyle {
       -webkit-backface-visibility: hidden;
     }
 
-    .card-backside {
+    .id-card-backside {
       transform: rotateY(180deg);
       background-image: url('${unsafeCSS(idcardback)}');
       background-size: cover;
@@ -41,26 +41,6 @@ export class IdCardStyle {
       backface-visibility: hidden;
       -webkit-backface-visibility: hidden;
     }
-
-    .card.small {
-      font-size: 12px;
-    }
-
-    .card.medium {
-      font-size: 14px;
-    }
-
-    .card.large {
-      font-size: 16px;
-    }
-
-    .header {
-      font-weight: bold;
-      margin-bottom: 12px;
-      border-bottom: 2px solid #333;
-      padding-bottom: 8px;
-    }
-
     .info-row {
       position: absolute;
     }

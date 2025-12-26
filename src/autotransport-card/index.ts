@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BaseComponent } from '../core/index.ts';
-import { AUTOTRANSPORT_CARD_PERSONAL_INFO, Size } from '../types.ts';
+import { AUTOTRANSPORT_CARD_PERSONAL_INFO, Size } from '../index';
 import { AutotransportCardStyle } from './style.ts';
 
 /**

@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BaseComponent } from '../core/index.ts';
-import { INTERNATIONAL_PASSPORT_PERSONAL_INFO, Size } from '../types.ts';
+import { INTERNATIONAL_PASSPORT_PERSONAL_INFO, Size } from '../index';
 import { InternationalPassportStyle } from './style.ts';
 
 /**
@@ -21,7 +21,7 @@ export class InternationalPassportCard extends BaseComponent {
 
   override render() {
     if (!this.personalInfo) {
-      return html`<div class="card">No data available</div>`;
+      return html`<div class="internatioanl-passport">No data available</div>`;
     }
 
     const { personalInfo } = this;
@@ -67,13 +67,13 @@ export class InternationalPassportCard extends BaseComponent {
         <div class="info-row user-citizenship">
           <span class="value">${personalInfo.citizenship}</span>
         </div>
-        <div class="info-row user-p">
-          <span class="value"> p< uzb ${personalInfo.name}  </span>
         </div>
-      </div>
-    </div>
-    `;
-  }
+        </div>
+        `;
+      }
+      // <div class="info-row user-p">
+      //   <span class="value"> p< uzb ${personalInfo.name}  </span>
+      // </div>
 
   override _onClick(): void {
     console.log('International Passport Card clicked');

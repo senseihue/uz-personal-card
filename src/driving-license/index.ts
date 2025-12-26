@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BaseComponent } from '../core/index.ts';
-import { DRIVING_LICENSE_PERSONAL_INFO, Size } from '../types.ts';
+import { DRIVING_LICENSE_PERSONAL_INFO, Size } from '../index';
 import { DrivingLicenseStyle } from './style.ts';
 /**
  * Driving License Card Component
@@ -20,14 +20,14 @@ export class DrivingLicenseCard extends BaseComponent {
 
   override render() {
     if (!this.personalInfo) {
-      return html`<div class="card">No data available</div>`;
+      return html`<div class="driving-license">No data available</div>`;
     }
 
     const { personalInfo } = this;
     const sizeClass = this.size.toLowerCase();
     return html`
-      <div class="card ${sizeClass}">
-        <div class="card-frontside">
+      <div class="driving-license ${sizeClass}">
+        <div class="driving-license-frontside">
       ${personalInfo.photo ? html`
       <img src="${personalInfo.photo}" alt="Photo" class="photo" />
       ` : ''}

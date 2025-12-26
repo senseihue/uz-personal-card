@@ -1,7 +1,7 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
 import { BaseComponent } from '../core/index.ts';
-import { ID_CARD_PERSONAL_INFO, Size } from '../types.ts';
+import { ID_CARD_PERSONAL_INFO, Size } from '../index';
 import { IdCardStyle } from './style.ts';
 
 /**
@@ -24,16 +24,16 @@ export class IdCard extends BaseComponent {
 
   override render() {
     if (!this.personalInfo) {
-      return html`<div class="card">No data available</div>`;
+      return html`<div class="id-card">No data available</div>`;
     }
 
     const { personalInfo } = this;
     const sizeClass = this.size.toLowerCase();
 
     return html`
-      <div class="card ${sizeClass} ${this.flipped ? 'flipped' : ''}" @click=${this._onClick}>
+      <div class="id-card ${sizeClass} ${this.flipped ? 'flipped' : ''}" @click=${this._onClick}>
         
-      <div class="card-frontside">
+      <div class="id-card-frontside">
           ${personalInfo.photo ? html`
           <img src="${personalInfo.photo}" alt="Photo" class="photo" />
           ` : ''}
@@ -76,7 +76,7 @@ export class IdCard extends BaseComponent {
         </div>
 
       </div>
-      <div class="card-backside">
+      <div class="id-card-backside">
         <div class="info-row user-pin">
           <span class="value">${personalInfo.pin}</span>
         </div>

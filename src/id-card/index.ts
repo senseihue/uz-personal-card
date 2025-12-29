@@ -1,8 +1,8 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { BaseComponent } from '../core/index.ts';
-import { ID_CARD_PERSONAL_INFO, Size } from '../index';
-import { IdCardStyle } from './style.ts';
+import { BaseComponent } from '../core';
+import { Size } from '../types';
+import { IdCardStyle } from './style';
 
 /**
  * ID Card Component

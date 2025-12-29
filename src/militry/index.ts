@@ -1,8 +1,8 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { BaseComponent } from '../core/index.ts';
-import { MILITRY_ID_CARD_INFO, Size } from '../index';
-import { MilitryIdCardStyle } from './style.ts';
+import { BaseComponent } from '../core';
+import { Size } from '../types';
+import { MilitryIdCardStyle } from './style';
 
 /**
  * Militry ID Card Component

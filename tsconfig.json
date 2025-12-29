@@ -1,32 +1,31 @@
 {
   "$schema": "http://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ES2022",
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "experimentalDecorators": true,
     "useDefineForClassFields": false,
     "sourceMap": true,
-    "module": "ESNext",
     "declaration": true,
     "declarationMap": true,
     "lib": [
-      "ES2022",
+      "ESNext",
       "DOM",
       "DOM.Iterable"
     ],
     "types": [
       "vite/client"
     ],
-    "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "declarationDir": "temp/types",
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "allowImportingTsExtensions": false,
     "verbatimModuleSyntax": false,
     "moduleDetection": "force",
-    "noEmit": true,
     /* Linting */
-    "strict": true,
+    "strict": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": false,

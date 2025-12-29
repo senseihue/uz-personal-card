@@ -1,8 +1,8 @@
 import { html } from 'lit';
 import { customElement, property } from 'lit/decorators.js';
-import { BaseComponent } from '../core/index.ts';
-import { DRIVING_LICENSE_PERSONAL_INFO, Size } from '../index';
-import { DrivingLicenseStyle } from './style.ts';
+import { BaseComponent } from '../core';
+import { Size } from '../types';
+import { DrivingLicenseStyle } from './style';
 /**
  * Driving License Card Component
  * 

@@ -1,18 +1,32 @@
 {
-  "name": "my",
-  "private": true,
-  "version": "0.0.0",
+  "name": "uz-personal-card-private",
+  "private": false,
+  "version": "0.0.2",
   "type": "module",
   "main": "./src/index.ts",
-  "typings": "./src/index.d.ts",
+  "typings": "./src/types/index.d.ts",
   "scripts": {
     "dev": "vite --host",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "vite build && yarn build:types",
+    "build:types": "./scripts/types.sh",
+    "preview": "vite preview",
+    "docs": "tsc"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.js",
+      "require": "./dist/my-lib.umd.cjs"
+    },
+    "./style.css": "./dist/my-lib.css"
   },
   "dependencies": {
+    "@microsoft/api-extractor": "^7.55.2",
     "lit": "^3.3.1"
   },
+  "files": [
+    "dist",
+    "temp"
+  ],
   "devDependencies": {
     "typescript": "~5.9.3",
     "vite": "^7.2.4"

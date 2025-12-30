@@ -6,5 +6,5 @@ node_modules/typescript/bin/tsc --emitDeclarationOnly
 echo "Generating API..."
 node_modules/@microsoft/api-extractor/bin/api-extractor run --local --verbose
 
-# echo "Generating Markdowns"
-# node_modules/@microsoft/api-extractor/bin/api-documenter markdown --output-folder ./temp/markdown --input temp
+echo "Generating Markdowns"
+node_modules/@microsoft/api-documenter/bin/api-documenter markdown --output-folder ./temp/markdown --input temp

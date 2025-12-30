@@ -1,0 +1,120 @@
+import { css, unsafeCSS, type CSSResultGroup } from 'lit';
+import idcard from '../assets/id-card.svg'
+import idcardback from '../assets/idcardback.svg'
+export class IdCardStyle {
+  static styles: CSSResultGroup = css`
+    .id-card {
+      width: 450px;
+      height: 281px;
+      transform-style: preserve-3d;
+      transition: transform .8s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .id-card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    
+    .id-card-frontside {
+      background-image: url('${unsafeCSS(idcard)}');
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+
+    .id-card-backside {
+      transform: rotateY(180deg);
+      background-image: url('${unsafeCSS(idcardback)}');
+      background-size: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .info-row {
+      position: absolute;
+    }
+
+    .value {
+      margin: 0px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: -0.01em;
+      color: rgb(11, 11, 12);
+    }
+
+    .photo {
+      width: 116px;
+      height: 142px;
+      top: 80px;
+      left: 16px;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .user-surname {
+      top: 90px;
+      left: 150px;
+    }
+    .user-name {
+      top: 120px;
+      left: 150px;
+    }
+    .user-patronymic {
+      top: 155px;
+      left: 150px;
+    }
+    .user-birth-date {
+      top: 185px;
+      left: 150px;
+    }
+    .date-of-issue {
+      top: 217px;
+      left: 150px;
+    }
+    .date-of-expiry {
+      top: 248px;
+      left: 150px;
+    }
+    .passport-number {
+      top: 248px;
+      right: 20px;
+    }
+    .user-citizenship {
+      top: 217px;
+      right: 20px;
+    }
+    .user-gender {
+      top: 185px;
+      right: 20px;
+    }
+
+    .user-pin {
+      top: 67px;
+      left: 127px;
+    }
+    .user-nationality {
+      top: 100px;
+      left: 127px;
+    }
+    .user-birth-place {
+      top: 130px;
+      left: 127px;
+    }
+    .place-of-issue {
+      top: 160px;
+      left: 127px;
+    }
+  `;
+}
